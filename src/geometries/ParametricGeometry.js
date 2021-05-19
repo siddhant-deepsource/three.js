@@ -1,45 +1,19 @@
-import { Geometry } from '../core/Geometry.js';
-import { BufferGeometry } from '../core/BufferGeometry.js';
-import { Float32BufferAttribute } from '../core/BufferAttribute.js';
-import { Vector3 } from '../math/Vector3.js';
-
 /**
  * Parametric Surfaces Geometry
  * based on the brilliant article by @prideout https://prideout.net/blog/old/blog/index.html@p=44.html
  */
 
-// ParametricGeometry
+import { BufferGeometry } from '../core/BufferGeometry.js';
+import { Float32BufferAttribute } from '../core/BufferAttribute.js';
+import { Vector3 } from '../math/Vector3.js';
 
-class ParametricGeometry extends Geometry {
+class ParametricGeometry extends BufferGeometry {
 
 	constructor( func, slices, stacks ) {
 
 		super();
 
 		this.type = 'ParametricGeometry';
-
-		this.parameters = {
-			func: func,
-			slices: slices,
-			stacks: stacks
-		};
-
-		this.fromBufferGeometry( new ParametricBufferGeometry( func, slices, stacks ) );
-		this.mergeVertices();
-
-	}
-
-}
-
-// ParametricBufferGeometry
-
-class ParametricBufferGeometry extends BufferGeometry {
-
-	constructor( func, slices, stacks ) {
-
-		super();
-
-		this.type = 'ParametricBufferGeometry';
 
 		this.parameters = {
 			func: func,
@@ -156,5 +130,4 @@ class ParametricBufferGeometry extends BufferGeometry {
 
 }
 
-
-export { ParametricGeometry, ParametricBufferGeometry };
+export { ParametricGeometry, ParametricGeometry as ParametricBufferGeometry };
