@@ -2,18 +2,8 @@ version = 1
 
 test_patterns = ["test/**"]
 
-exclude_patterns = [
-    ".github/**",
-    "build/**",
-    "docs/**",
-    "files/**"
-]
+exclude_patterns = ["build/**"]
 
 [[analyzers]]
 name = "javascript"
 enabled = true
-
-  [analyzers.meta]
-  ecma_version = "2020"
-  module_system = "commonjs"
-  environment = ["nodejs"]
